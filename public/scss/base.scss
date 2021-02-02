@@ -1,0 +1,54 @@
+
+
+body{
+    background-color: #fff;
+}
+
+header {
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    z-index: 9999;
+    nav{
+        background-color: #000;
+        border-bottom:5px solid  rgb(255, 132, 0);
+    }    
+    a,a:hover{
+        color: rgb(255, 132, 0);
+        margin-left:10px;
+    }
+}
+
+main{
+    margin-top:80px;
+    .container{
+        background: #fff;
+        min-height: 500px;
+        .row{
+            background: rgb(255, 247, 180);
+            min-height: 16px;
+            div[class^='col-']{
+                min-height: 100px;
+                border: 1px dashed #000;
+                padding: 10px;
+            }
+            input{
+                margin:2px;
+            }
+        }
+
+    }
+}
+
+footer{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    background: #000;
+    color:#fff;
+    border-top: 5px solid  rgb(255, 132, 0);
+    padding:10px;
+    text-align:center;
+    z-index: 9999;
+}

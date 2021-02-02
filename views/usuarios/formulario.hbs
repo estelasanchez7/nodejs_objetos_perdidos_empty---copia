@@ -1,0 +1,17 @@
+   <h1>Usuario nuevo</h1>
+      </div>
+      <div class="col-12 d-flex resultado justify-content-center align-items-center">
+        <form method="post" action="/usuarios/guardar" style="display:grid">
+          Registro de usuario nuevo:
+          <input name="nombre" id="nombre" placeholder="nombre" value="{{nombre}}">
+          <input name="email" id="email" placeholder="email" value="{{email}}">
+          <input name="password" id="password" placeholder="password">
+          <input type="submit" class="btn btn-primary" value="Guardar">
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <p>{{mensaje}}</p>
+      </div>
+    </div>

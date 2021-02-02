@@ -1,0 +1,58 @@
+body {
+  background-color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9999;
+}
+
+header nav {
+  background-color: #000;
+  border-bottom: 5px solid #ff8400;
+}
+
+header a, header a:hover {
+  color: #ff8400;
+  margin-left: 10px;
+}
+
+main {
+  margin-top: 80px;
+}
+
+main .container {
+  background: #fff;
+  min-height: 500px;
+}
+
+main .container .row {
+  background: #fff7b4;
+  min-height: 16px;
+}
+
+main .container .row div[class^='col-'] {
+  min-height: 100px;
+  border: 1px dashed #000;
+  padding: 10px;
+}
+
+main .container .row input {
+  margin: 2px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border-top: 5px solid #ff8400;
+  padding: 10px;
+  text-align: center;
+  z-index: 9999;
+}
+/*# sourceMappingURL=base.css.map */
