@@ -1,13 +1,23 @@
-{{#each objetosPerdidos}}
-<div class="col-6">
+<div class="container">
     <div class="row">
-        <div class="col-4">
-            <img src="{{foto}}" style="width: 100%;" alt="foto">
+        <div class="col-12 d-flex  justify-content-center">
+            <h1>Listado de objetos</h1>
         </div>
-        <div class="col-8">
-            <div>{{titulo}}</div>
-            <div>{{descripcion}}</div>
+        {{#each objetosPerdidos}}
+        <div class="row">
+            <div class="col-12 d-flex resultado justify-content-center align-items-center" style="margin: 5px;">
+                <div class="card-group">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="/images/{{foto}}" alt="Card image cap" style="width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{titulo}}</h5>
+                            <p class="card-text">{{descripcion}}</p>
+                            <a href="#" class="btn btn-outline-success">Solicitar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        {{/each}}
     </div>
 </div>
-{{/each}}

@@ -3,19 +3,23 @@
     <div class="container">
       <div class="row">
         <div class="col-12 d-flex resultado justify-content-center align-items-center">
-          <form method="post" action="/objetos/guardar" style="display:grid" enctype="multipart/form-data">
-            Escribe tu objeto:
-            <input name="nombre" id="nombre" placeholder="nombre" value="{{nombre}}">
-            <input name="telefono" id="telefono" placeholder="telefono" value="{{telefono}}">
-            <input name="titulo" id="titulo" placeholder="titulo" value="{{titulo}}">
-            <input name="descripcion" id="descripcion" placeholder="descripcion" value="{{descripcion}}">
-            <input type="file" name="foto" id="foto">
-            <input type="submit" class="btn btn-primary" value="Guardar">
+          <form class="form-group" method="post" action="/objetos/guardar" style="display:grid" enctype="multipart/form-data">
+            <h4>Escribe tu objeto:</h4>
+            <input name="nombre" id="nombre" placeholder="nombre" value="{{nombre}}" class="form-control"><br>
+
+            <input name="telefono" id="telefono" placeholder="telefono" value="{{telefono}}" class="form-control"><br>
+
+            <input name="titulo" id="titulo" placeholder="titulo" value="{{titulo}}" class="form-control"><br>
+
+            <input name="descripcion" id="descripcion" placeholder="descripcion" value="{{descripcion}}" class="form-control"><br>
+
+            <input type="file" name="foto" id="foto"> <br>
+            <input type="submit" class="btn btn-outline-primary" value="Guardar">
           </form>
         </div>
         <div class="col-12">
           {{#if mensaje}}
-            <div class="alert alert-success" role="alert">
+            <div class="alert alert-primary" role="alert">
               {{mensaje}}
             </div>
           {{/if}}

@@ -1,0 +1,25 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 d-flex resultado justify-content-center align-items-center">
+        <h1>Login de usuario</h1>
+      </div>
+      <div class="col-12 d-flex resultado justify-content-center align-items-center">
+        <form method="post" action="/usuarios/login" class="form-group" style="display:grid">
+          <h6>Escribe tus credenciales:</h6>
+          <input name="email" id="email" placeholder="email" value="{{body.email}}" class="form-control"> <br>
+          <input name="password" id="password" placeholder="password" class="form-control"> <br>
+          <input type="submit" class="btn btn-outline-primary" value="Guardar" class="form-control"> <br>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+          {{#if mensaje}}
+            <div class="alert alert-primary" role="alert">
+              {{mensaje}}
+            </div>
+          {{/if}}
+        </div>
+    </div>
+</main>
