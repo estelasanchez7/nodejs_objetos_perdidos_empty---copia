@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const session = require('express-session')
 const rtMain = require('./routes/rtMain')
 const rtUsers = require('./routes/rtUsers')
 const rtObjetos = require('./routes/rtObjetos')
@@ -18,11 +19,23 @@ app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(fileUpload())
+app.use(session({ //gestión de sesiones
+    secret: 'miclavesecreta',
+    resave: false,
+    saveUninitialized: true
+}))
+
+//middleware para capturar la session:
+app.use(function (req, res, next) {
+    res.locals.session = req.session
+    next()
+})
 
 //enrutador principal
 app.use('/',rtMain)
 app.use('/usuarios',rtUsers)
 app.use('/objetos',rtObjetos)
+app.use('/privado',rtPrivado)
 
 //base de datos mongodb
 conexion.on('error',console.error.bind(console,'Error al conectar a mongo'))
@@ -32,5 +45,3 @@ conexion.once('open',()=>console.log("Conexión con Mongo OK!!"))
 app.listen(3000,(err)=>{
     console.log('Server run on port 3000')
 })
-
-//mongo --port 27017 -u "superAdmin" -p "pass1234" --authenticationDatabase "admin"
