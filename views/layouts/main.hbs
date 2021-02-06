@@ -22,11 +22,11 @@
              <!--ESTE CONTENIDO SE VERÁ SOLO EN PRIVADO-->
           {{#if session.autenticado}}
           <li class="nav-item"> <a class="nav-link active" id="btnnuevo" href="/objetos/nuevo">Nuevo objeto</a> </li>
-          <li class="nav-item"> <a class="nav-link active" id="btnnuevo" href="/objetos/listado">Listado objetos</a> </li>
           <li class="nav-item"> <a class="nav-link active" id="btnnuevo" href="/usuarios/unlogin">Unlogin / Salir</a> </li>
           {{/if}}
           <!--ESTE CONTENIDO SE VERÁ SOLO EN PÚBLICO-->
           {{#unless session.autenticado}}
+          <li class="nav-item"> <a class="nav-link active" id="btnnuevo" href="/objetos/listado">Listado objetos</a> </li>
           <li class="nav-item"> <a class="nav-link active" id="btnnuevo" href="/usuarios/nuevo">Registrarme</a> </li>
           <li class="nav-item"> <a class="nav-link active" id="btnnuevo" href="/usuarios/login">Login / Entrar</a> </li>
           {{/unless}}

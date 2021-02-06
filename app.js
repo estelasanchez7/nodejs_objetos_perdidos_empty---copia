@@ -27,15 +27,21 @@ app.use(session({ //gestión de sesiones
 
 //middleware para capturar la session:
 app.use(function (req, res, next) {
+    console.log('Estoy pasando por el middleware', req.url)
+    if(req.session.autenticado){
+    console.log('autenticado existe')
     res.locals.session = req.session
-    next()
+    }else{
+        if(rutasPrivadas.indexOf(req.url)!=-1){
+            res.render('/usuarios/acceso-denegado') //he puesto /usuarios/
+        }else next()
+    }
 })
 
 //enrutador principal
 app.use('/',rtMain)
 app.use('/usuarios',rtUsers)
 app.use('/objetos',rtObjetos)
-app.use('/privado',rtPrivado)
 
 //base de datos mongodb
 conexion.on('error',console.error.bind(console,'Error al conectar a mongo'))
