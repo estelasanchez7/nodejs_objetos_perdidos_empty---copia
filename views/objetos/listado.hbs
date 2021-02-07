@@ -3,6 +3,11 @@
         <div class="col-12 d-flex  justify-content-center">
             <h1>Listado de objetos</h1>
         </div>
+         <div class="col-12 justify-content-center">
+            <h6>Filtrar por título</h6>
+            <input type="text" id="filtro" name="filtro">
+            <button class="btn btn-outline-dark" id="filtrar">Filtrar</button>
+        </div>
         {{#each objetosPerdidos}}
         <div class="row">
             <div class="col-12 d-flex resultado justify-content-center align-items-center" style="margin: 5px;">
@@ -21,3 +26,25 @@
         {{/each}}
     </div>
 </div>
+
+<script>
+    filtrar.onclick=()=>{
+        let filtro=document.querySelector('#filtro')
+        console.log('has pulsado filtrar')
+        console.log('Has escrito', filtro.value)
+        fetch('/objetos/filtrar', {
+            method:'post',
+            body: JSON.stringify({titulo:filtro.value}),
+            headers: {'Content-Type': 'application/json'}
+        }).then(res=>res.json())
+            .then(listado=>mostrarResultados(listado))
+    }
+
+    function mostrarResultados(listado){
+        //limpiar el contenedor
+        listado.forEach(elem=>{
+        //hacemos un bucle del array listado mostrando los objetos
+
+        })
+    }
+</script>
